@@ -21,7 +21,7 @@ module.exports = {
         try {
             const { email } = req.body;
             const userEmail = userService.getUsers();
-            let checkUser = userEmail.find((user) => user.email === email);
+            const checkUser = userEmail.find((user) => user.email === email);
 
             if (checkUser) {
                 throw new Error('User already exist');
